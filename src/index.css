@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.game-card {
+  flex: 1 1 calc(33.333% - 20px);
+  /* Three-column layout */
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .game-card {
+    flex: 1 1 100%;
+    /* One column layout on mobile */
+  }
+}
+
+.spinner {
+  margin: 20px auto;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin: 20px 0;
+}
